@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Gamer Survey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 id="title">Level Up Your Profile</h1>
+      <p id="description">
+        Help us curate the ultimate gaming experience by sharing your stats.
+      </p>
+
+      <form id="survey-form">
+        <!-- Personal Info -->
+        <fieldset class="form-group">
+          <legend>Player Identity</legend>
+          <label for="name" id="name-label">Gamertag/Name: </label>
+          <input
+            id="name"
+            type="text"
+            name="gamertag"
+            placeholder="E.g., NoobSlayer99"
+            class="input-field"
+            required
+          />
+
+          <label for="email" id="email-label">Comms (Email): </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            placeholder="E.g., masterchief@halomail.com"
+            class="input-field"
+          />
+
+          <label for="number" id="number-label">Experience (Age): </label>
+          <input
+            id="number"
+            type="number"
+            name="age"
+            min="10"
+            max="99"
+            placeholder="E.g., 18"
+            class="input-field"
+          />
+        </fieldset>
+
+        <!-- Platforms -->
+        <fieldset class="form-group">
+          <legend>Primary Rig</legend>
+          <label for="dropdown">Choose your main platform: </label>
+          <select name="platform" id="dropdown" class="select-dropdown">
+            <option disabled selected value="">Select your platform</option>
+            <option value="pc">PC (Master Race)</option>
+            <option value="playstation">Playstation 5</option>
+            <option value="xbox">Xbox Series X/S</option>
+            <option value="switch">Nintendo Switch</option>
+          </select>
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset class="form-group">
+          <legend>Do you prefer Multiplayer over Single Player?</legend>
+          <label for="multiplayer-yes">
+            <input
+              id="multiplayer-yes"
+              type="radio"
+              name="play-style"
+              value="multiplayer"
+              class="radio-input"
+              checked
+            />
+            Yes, I'm a social gamer
+          </label>
+          <br />
+          <label for="singleplayer-only">
+            <input
+              id="singleplayer-only"
+              type="radio"
+              name="play-style"
+              value="singleplayer"
+              class="radio-input"
+            />
+            No, I prefer solo quests
+          </label>
+        </fieldset>
+
+        <!-- Favorite Genres -->
+        <fieldset class="form-group">
+          <legend>Which genres do you dominate? (Check all that apply)</legend>
+          <label class="checkbox-label" for="rpg">
+            <input
+              id="rpg"
+              type="checkbox"
+              name="genre"
+              value="rpg"
+              class="checkbox"
+            />
+            RPG / JRPG
+          </label>
+          <label class="checkbox-label" for="fps">
+            <input
+              id="fps"
+              type="checkbox"
+              name="genre"
+              value="fps"
+              class="checkbox"
+            />
+            First-Person Shooter
+          </label>
+          <label class="checkbox-label" for="souls">
+            <input
+              id="souls"
+              type="checkbox"
+              name="genre"
+              value="souls-like"
+              class="checkbox"
+            />
+            Souls-like
+          </label>
+          <label class="checkbox-label" for="indie">
+            <input
+              id="indie"
+              type="checkbox"
+              name="genre"
+              value="indie"
+              class="checkbox"
+            />
+            Indie Gems
+          </label>
+        </fieldset>
+
+        <!-- Feedback -->
+        <fieldset class="form-group">
+          <legend>What is your "Game of the Year"?</legend>
+          <textarea
+            id="comments"
+            name="goty-review"
+            placeholder="Tell us why this game is a 10/10..."
+            rows="4"
+          ></textarea>
+        </fieldset>
+
+        <button id="submit" type="submit" class="submit-btn">
+          Save Progress & Submit
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
