@@ -1,0 +1,250 @@
+:root {
+  /* Background & Container */
+  --bg-color: #f3e5f5;
+  --form-bg: #ffffff;
+
+  /* Brand Colors */
+  --primary-pastel: #b39ddb;
+  --secondary-pastel: #80deea;
+  --accent-pastel: #f48fb1;
+
+  /* Text Colors */
+  --text-main: #4a4a4a;
+  --text-muted: #7d7d7d;
+
+  /* Input & UI Elements */
+  --input-border: #e0e0e0;
+  --input-focus: #ce93d8;
+  --success-color: #a5d6a7;
+
+  --radio-size: 22px;
+  --dot-size: 55%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+}
+
+input,
+textarea {
+  margin: 10px 0;
+}
+
+.container {
+  background-color: var(--form-bg);
+  border-left: 5px solid var(--primary-pastel);
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  box-shadow: 0 5px 15px var(--primary-pastel);
+}
+
+.input-field,
+textarea {
+  box-sizing: border-box;
+  border: 1px solid var(--input-border);
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+input,
+.select-dropdown,
+textarea {
+  color: var(--text-main);
+}
+
+#title,
+#description {
+  text-align: center;
+}
+
+#title {
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#description {
+  color: var(--text-muted);
+}
+
+.form-group {
+  border: 1px solid var(--primary-pastel);
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.form-group > legend {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkbox-label {
+  display: block;
+}
+
+.radio-input,
+.checkbox {
+  appearance: none;
+  width: var(--radio-size);
+  aspect-ratio: 1 / 1;
+
+  border: 2px solid var(--primary-pastel);
+  background-color: var(--form-bg);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  vertical-align: middle;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.radio-input {
+  border-radius: 50%;
+}
+
+.checkbox {
+  border-radius: 4px;
+}
+
+.radio-input::before,
+.checkbox::before {
+  content: "";
+  width: var(--dot-size);
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+  background-color: var(--success-color);
+
+  transform: scale(0);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.radio-input:checked,
+.checkbox:checked {
+  border-color: var(--success-color);
+}
+
+.radio-input:checked::before,
+.checkbox:checked::before {
+  transform: scale(1);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+#submit:focus-visible {
+  outline: 2px solid var(--secondary-pastel);
+  outline-offset: 3px;
+}
+
+.submit-btn {
+  cursor: pointer;
+  background-color: var(--accent-pastel);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  display: block;
+  margin: auto;
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary-pastel);
+}
+
+.select-dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background-color: var(--form-bg);
+  font-size: 1rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23b39ddb' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+}
+
+.input-field,
+.select-dropdown,
+textarea {
+  transition: border-color 0.3s ease;
+}
+
+.select-dropdown:hover,
+.input-field:hover,
+textarea:hover {
+  border-color: var(--primary-pastel);
+}
+
+.form-group:focus-within {
+  border-color: var(--secondary-pastel);
+  box-shadow: 0 0 10px rgba(128, 222, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.form-group:focus-within legend {
+  color: var(--secondary-pastel);
+}
+
+::placeholder {
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.radio-input:hover::before,
+.checkbox:hover::before {
+  transform: scale(0.5);
+  opacity: 0.3;
+}
+
+/* Ensure the checked state overrides the hover preview */
+.radio-input:checked::before,
+.checkbox:checked::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media screen and (min-width: 650px) {
+  .container {
+    width: 650px;
+  }
+
+  #title {
+    font-size: 2.3rem;
+  }
+
+  label,
+  #description {
+    font-size: 1.2rem;
+  }
+
+  #title,
+  #description {
+    text-align: center;
+  }
+
+  .form-group > legend {
+    font-size: 1.3rem;
+  }
+}
